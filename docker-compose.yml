@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: finsense-postgres
+    environment:
+      POSTGRES_DB: finsense
+      POSTGRES_USER: finsense
+      POSTGRES_PASSWORD: finsense
+    ports:
+      - "5432:5432"
+    volumes:
+      - finsense_pgdata:/var/lib/postgresql/data
+volumes:
+  finsense_pgdata:
